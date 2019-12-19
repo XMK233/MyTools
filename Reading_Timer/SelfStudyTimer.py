@@ -44,6 +44,17 @@ def count_back():
         else:
         	v=str(round(float(r['text'])-0.1,1))
         time.sleep(0.1)
+
+        ## every a certain period of time, change color and font size to remind. 
+        v_num = int(float(v))
+        if v_num % REMIND_PERIOD in [2, 1, 0, REMIND_PERIOD - 1, REMIND_PERIOD - 2]:
+            r['fg'] = "red"
+            r['font'] = ('DejaVuSansMono', 20)
+        else:
+            r['fg'] = "black"
+            r['font'] = "TkDefaultFont"
+            # r['size'] = '2'
+
         r['text']=v
         # r.delete(0,END)
         # r.insert(0,v)
@@ -65,6 +76,8 @@ def count_back():
         #     e.update()
         # except:
         #     break
+
+REMIND_PERIOD = 300
 
 var=0
 
