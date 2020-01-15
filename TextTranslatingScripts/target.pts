@@ -1,0 +1,18 @@
+﻿Before the price evaluation program, AutoScout24 had used predictive analytics primarily for internal decision making and looking to answer questions based on historical data.
+ 在价格评估程序之前，AutoScout24主要使用预测分析进行内部决策，并希望根据历史数据来回答问题。
+
+But now, with the price evaluation tool we needed a prediction model that would be continuously integrated into live operations.
+但是现在，使用价格评估工具，我们需要一个可以连续集成到实际运营中的预测模型。
+
+This posed a significant challenges for our data science team: we needed to ensure that the system could handle performance requirements, without needing manual performance optimization or sacrificing prediction accuracy.
+这给我们的数据科学团队提出了重大挑战：我们需要确保系统能够满足性能要求，而无需手动进行性能优化或牺牲预测精度。
+
+To achieve that result, we realized there was an opportunity to take a Continuous Delivery approach to predictive analytics.
+为了实现这一结果，我们意识到有机会采用持续交付方法进行预测分析。
+
+Typically, concepts such as Continuous Delivery, Test-Driven Development and Consumer-Driven Contracts are increasingly common in software engineering.
+通常，诸如连续交付，测试驱动的开发和消费者驱动的合同之类的概念在软件工程中越来越普遍。
+
+They’re almost unheard of in data science practice.
+他们几乎在数据科学实践中闻所未闻。
+
