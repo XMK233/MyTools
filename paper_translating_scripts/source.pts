@@ -1,0 +1,6 @@
+﻿In order to formalise the model training process in code, we used an open source tool called DVC (Data Science Version Control). It provides similar semantics to Git, but also solves a few ML-specific problems:
+
+it has multiple backend plugins to fetch and store large files on an external storage outside of the source control repository;
+it can keep track of those files' versions, allowing us to retrain our models when the data changes;
+it keeps track of the dependency graph and commands used to execute the ML pipeline, allowing the process to be reproduced in other environments;
+it can integrate with Git branches to allow multiple experiments to co-exist;

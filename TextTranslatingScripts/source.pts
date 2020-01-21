@@ -1,5 +1,0 @@
-﻿Before the price evaluation program, AutoScout24 had used predictive analytics primarily for internal decision making and looking to answer questions based on historical data.
-
-But now, with the price evaluation tool we needed a prediction model that would be continuously integrated into live operations. This posed a significant challenges for our data science team: we needed to ensure that the system could handle performance requirements, without needing manual performance optimization or sacrificing prediction accuracy.
-
-To achieve that result, we realized there was an opportunity to take a Continuous Delivery approach to predictive analytics. Typically, concepts such as Continuous Delivery, Test-Driven Development and Consumer-Driven Contracts are increasingly common in software engineering. They’re almost unheard of in data science practice.
