@@ -16,4 +16,7 @@ Translate the English text line by line.
 ## SelfStudyTimer
 This is a tool that can help users set unlimited number of fixed time slops, like 5 minutes, to remind you that 5 minutes have passed, get to another study stage. 
 
+## ReadBookRandomize
+This tool is exactly the same as `MartialArtRandomize`. 
+
 
