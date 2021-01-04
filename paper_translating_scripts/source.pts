@@ -1,6 +1,13 @@
-﻿In order to formalise the model training process in code, we used an open source tool called DVC (Data Science Version Control). It provides similar semantics to Git, but also solves a few ML-specific problems:
-
-it has multiple backend plugins to fetch and store large files on an external storage outside of the source control repository;
-it can keep track of those files' versions, allowing us to retrain our models when the data changes;
-it keeps track of the dependency graph and commands used to execute the ML pipeline, allowing the process to be reproduced in other environments;
-it can integrate with Git branches to allow multiple experiments to co-exist;
+﻿Application programming interfaces (APIs) are a common
+and industrially-relevant means for third-party software developers to reuse external functionality. Several techniques
+have been proposed to help migrate client code between library versions with incompatible APIs, but it is not clear
+how well these perform in an absolute sense. We present a
+retroactive study into the presence and nature of API incompatibilities between several versions of a set of Java-based
+software libraries; for each, we perform a detailed, manual
+analysis to determine what the correct adaptations are to
+migrate from the older to the newer version. In addition, we
+investigate whether any of a set of adaptation recommender
+techniques is capable of identifying the correct adaptations
+for library migration. We find that a given API incompatibility can typically be addressed by only one or two recommender techniques, but sometimes none serve. Furthermore,
+those techniques give correct recommendations, on average,
+in only about 20% of cases.

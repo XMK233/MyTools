@@ -1,6 +1,18 @@
-﻿In order to formalise the model training process in code, we used an open source tool called DVC (Data Science Version Control).
- 为了用代码形式化模型训练过程，我们使用了一个称为DVC（数据科学版本控制）的开源工具。
+﻿Application programming interfaces (APIs) are a common and industrially-relevant means for third-party software developers to reuse external functionality.
+应用程序编程接口（API）是第三方软件开发人员重用外部功能的一种常见且与工业相关的方法。
 
-It provides similar semantics to Git, but also solves a few ML-specific problems:  it has multiple backend plugins to fetch and store large files on an external storage outside of the source control repository; it can keep track of those files' versions, allowing us to retrain our models when the data changes; it keeps track of the dependency graph and commands used to execute the ML pipeline, allowing the process to be reproduced in other environments; it can integrate with Git branches to allow multiple experiments to co-exist;.
-它提供了与Git类似的语义，但也解决了一些特定于ML的问题：它具有多个后端插件，可在源代码控制存储库之外的外部存储中获取并存储大文件；它可以跟踪那些文件的版本，从而允许我们在数据更改时重新训练我们的模型；它跟踪用于执行ML管道的依赖关系图和命令，从而使该过程可以在其他环境中重现；它可以与Git分支集成，以允许多个实验共存；
+Several techniques have been proposed to help migrate client code between library versions with incompatible APIs, but it is not clear how well these perform in an absolute sense.
+已经提出了几种技术来帮助使用不兼容的API在库版本之间迁移客户端代码，但是目前尚不清楚它们在绝对意义上的表现如何。
+
+We present a retroactive study into the presence and nature of API incompatibilities between several versions of a set of Java-based software libraries; for each, we perform a detailed, manual analysis to determine what the correct adaptations are to migrate from the older to the newer version.
+我们将对一组基于Java的软件库的多个版本之间API不兼容的存在和性质进行回顾性研究。对于每个版本，我们都会进行详细的手动分析，以确定从旧版本迁移到新版本的正确方法。
+
+In addition, we investigate whether any of a set of adaptation recommender techniques is capable of identifying the correct adaptations for library migration.
+此外，我们调查了一组改编推荐技术是否能够识别出用于图书馆迁移的正确改编。
+
+We find that a given API incompatibility can typically be addressed by only one or two recommender techniques, but sometimes none serve.
+我们发现，给定的API不兼容通常只能通过一种或两种推荐技术来解决，但有时没有一种可以解决。
+
+Furthermore, those techniques give correct recommendations, on average, in only about 20% of cases.
+此外，这些技术平均仅在大约20％的情况下给出正确的建议。
 

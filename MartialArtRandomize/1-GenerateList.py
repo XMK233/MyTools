@@ -1,4 +1,4 @@
-import random
+import random, sys
 def generate_list():
     with open("MartialArtList.pts", "r", encoding="utf-8") as ma:
         contents = ma.readlines()
@@ -26,4 +26,17 @@ def consume_list():
                 continue
             tr.write("{}\n".format(content.strip()))
 
-consume_list()
+while True:
+    consume_list()
+    ch = input()
+    # print(int(ch))
+    print(ch)
+    if ch == "q":
+        break
+
+# while True: 
+#     consume_list()
+#     ch = sys.stdin.read(1) 
+#     if ch == '\x1b': 
+#      exit(0) 
+
