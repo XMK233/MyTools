@@ -18,7 +18,7 @@ def consume_list():
         contents = tr.readlines()    
         _ = contents[0]
         target = _.strip()
-        print(target)
+        # print(target)
     ## 
     with open("ThisRound.pts", "w", encoding="utf-8") as tr:
         for content in contents:
@@ -26,13 +26,7 @@ def consume_list():
                 continue
             tr.write("{}\n".format(content.strip()))
 
-while True:
-    consume_list()
-    ch = input()
-    # print(int(ch))
-    print(ch)
-    if ch == "q":
-        break
+    return target
 
 # while True: 
 #     consume_list()
