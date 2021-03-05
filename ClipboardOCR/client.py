@@ -15,7 +15,8 @@ def pil_base64(image):
     byte_data = img_buffer.getvalue()
     base64_str = base64.b64encode(byte_data)
     return base64_str
-print("Started. Now just shoot the screen.\n\n\n")
+print("The client is started.")
+print("Before capturing the screen, please go to the file path and run the server locally first.\n------------------")
 while True:
     time.sleep(1)
 
