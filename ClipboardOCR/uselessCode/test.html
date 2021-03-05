@@ -1,0 +1,77 @@
+<html>
+<head>
+<title>Document name goes here</title>
+</head>
+<body>
+
+    Paste the image here:<br><br>
+
+    <textarea id="result"></textarea>
+
+    <button id="copy-button">Send the image to a served model</button>
+
+    <button id="clear-button">Clear</button>
+
+    <script type="text/javascript">
+
+        document.getElementById('result').addEventListener('paste', function(e) {
+            // 阻止粘贴
+            e.stopPropagation();
+            e.preventDefault();			 
+            // 获取剪贴板信息
+            var clipboardData = e.clipboardData || window.clipboardData;
+            var items = clipboardData.items;
+            for(var i=0; i<items.length; i++) {
+                var item = items[i];
+                if (item.kind == 'file') {
+                    var pasteFile = item.getAsFile();
+                    var reader = new FileReader();
+                    reader.onload = function(event) {
+                        // 将结果显示在<textarea>中
+                        document.getElementById('result').value = event.target.result;
+                    }
+                    // 将文件读取为BASE64格式字符串
+                    reader.readAsDataURL(pasteFile);
+                    break;
+                }
+            }				
+        })
+        // ————————————————
+        // 版权声明：本文为CSDN博主「超频化石鱼」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+        // 原文链接：https://blog.csdn.net/fyyyr/article/details/107488856
+
+
+        document.getElementById('copy-button').onclick = function() {
+            var resultTextArea = document.getElementById('result');//获取对象
+            resultTextArea.select();//选择
+            resultTextArea.value;
+
+            var httpRequest = new XMLHttpRequest();//第一步：创建需要的对象
+            httpRequest.open('POST', 'url', true); //第二步：打开连接
+            httpRequest.setRequestHeader("Content-type","application/json");//设置请求头 注：post方式必须设置请求头（在建立连接后设置请求头）
+            httpRequest.send('name=teswe&ee=ef');//发送请求 将情头体写在send中
+            /**
+            * 获取数据后的处理程序
+            */
+            httpRequest.onreadystatechange = function () {//请求后的回调接口，可将请求成功后要执行的程序写在其中
+                if (httpRequest.readyState == 4 && httpRequest.status == 200) {//验证请求是否发送成功
+                    var json = httpRequest.responseText;//获取到服务端返回的数据
+                    console.log(json);
+                }
+            };
+
+        };
+        // ————————————————
+        // 版权声明：本文为CSDN博主「超频化石鱼」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+        // 原文链接：https://blog.csdn.net/fyyyr/article/details/107488856
+
+        document.getElementById('clear-button').onclick = function() {
+            document.getElementById('result').value = '';
+        };
+
+        
+
+    </script>
+
+</body>
+</html>
