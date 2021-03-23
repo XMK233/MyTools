@@ -2,20 +2,32 @@ from flask import Flask
 from GenerateList import consume_list
 from flask import render_template, request
 
-app = Flask(__name__, template_folder="IpMan_Murenzhuang")
+app = Flask(__name__) ## , template_folder="IpMan_Murenzhuang"
 
 @app.route('/')
 def hello_world():
-    return 'Hello, Martial Art World!'
+    return render_template("welcome.html")  ## 'Hello, Martial Art World!'
 
 @app.route('/next')
 def nextMartialArt():
-    return consume_list()
+    ma = consume_list()
+    return render_template("display.html", ma = ma)
 
 @app.route('/yongchun', methods = ['GET'])
 def getPage():
     page = request.args.get("p")
-    return render_template("{}.html".format(page)) 
+    return render_template("IpMan_Murenzhuang/{}.html".format(page)) 
+
+# ##########
+# @app.route('/json')
+# def json():
+#     return render_template('welcome.html')
+
+# ##background process happening without any refreshing
+# @app.route('/background_process_test')
+# def background_process_test():
+#     print ("Hello")
+#     return "nothing"
 
 if __name__ =="__main__":
     app.run(debug=True,port=54233)

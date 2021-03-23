@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+</head>
+<body>
+<table width="100%" cellpadding="0" cellspacing="0" height="100%"> <!-- 把height去掉, 显示的字符就会在页面最上方而非中间.  -->
+<tr>
+<td id = one valign="middle" align="center"> <!-- -->
+    <div id = "div1">
+    <font color="red" size="15">{{ma}}</font><br> <!-- https://blog.csdn.net/weixin_43870646/article/details/97001207 -->
+    <br>
+    <a href="{{url_for('nextMartialArt')}}"> 换一种 </a>
+    <br>
+    <!-- <p></p> -->
+    </div>
+    <!--  -->
+    <script>
+      const ft = document.querySelector('font')
+      // var d1 = document.getElementById('one'); 
+
+      // const para = document.querySelector('p');
+      if(ft.textContent === "咏春拳·木人桩") {
+        var element = document.getElementById("div1");
+        for (var i=1;i<=8;i++)
+        { 
+          var para = document.createElement("a");
+          para.appendChild(document.createTextNode("套路" + i));
+          para.setAttribute("href", "{{url_for('getPage')}}" + "?p=" + i)
+          var breakLine = document.createElement("br")
+          element.append(breakLine)
+          element.appendChild(para);
+        }
+      } else {
+        ;
+      }
+    </script>
+    <!--  -->
+</td>
+</tr>
+</table>
+</body>
+</html>
