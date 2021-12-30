@@ -6,7 +6,7 @@
 
 * 启动服务. 也就是跑`serving.py`代码. 也可以双击`StartServing.bat`这个文件开启. 这个是一个flask服务, 端口给它写死, 是54233 ("武术233"的谐音), ip地址是`localhost:54233` . 不过这个仅能在本机使用. 如果是将localhost转为ip地址, 那也只能在内网才能访问. 
 
-* 启动nginx, 以实现外网访问. 利用nginx来监听`80`端口, 然后将访问这个端口的请求转到`localhost:54233`接口去. 首先需要在nginx的`conf/nginx.conf`文件里面去改东西, 如下. 然后在nginx.exe所在的文件夹下使用`start nginx`把nginx跑起来就好了. 至于更多开启以及关掉nginx服务的东西, 参见[这里](https://www.jianshu.com/p/865ae9869f48) .  
+* 启动nginx, 以实现外网访问. 利用nginx来监听`80`端口, 然后将访问这个端口的请求转到`localhost:54233`接口去. 首先需要在nginx的`conf/nginx.conf`文件里面去改东西, 如下. 然后在nginx.exe所在的文件夹下使用`start nginx`把nginx跑起来就好了. 至于更多开启以及关掉nginx服务的东西, 参见[这里](https://www.jianshu.com/p/865ae9869f48) 可以使用`nginx -s quit`.  
 
   ```nginx
   ......
