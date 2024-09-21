@@ -1,4 +1,4 @@
-import random, sys
+import random, sys, os
 def generate_list():
     with open("MartialArtList.pts", "r", encoding="utf-8") as ma:
         contents = ma.readlines()
@@ -9,6 +9,8 @@ def generate_list():
 def consume_list():
     target = None
     ## 
+    if not os.path.exists("ThisRound.pts"):
+        generate_list()
     with open("ThisRound.pts", "r", encoding="utf-8") as tr:
         contents = tr.readlines()
         if contents == []:
