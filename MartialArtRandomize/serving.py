@@ -14,9 +14,14 @@ def nextMartialArt():
     return render_template("display.html", ma = ma)
 
 @app.route('/yongchun', methods = ['GET'])
-def getPage():
+def getPage_yongchun():
     page = request.args.get("p")
     return render_template("IpMan_Murenzhuang/{}.html".format(page)) 
+
+@app.route('/sjg', methods = ['GET'])
+def getPage_sjg():
+    page = request.args.get("p")
+    return render_template("shuang_jie_gun_18/{}.html".format(page)) 
 
 # ##########
 # @app.route('/json')

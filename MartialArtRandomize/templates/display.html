@@ -25,14 +25,23 @@
         { 
           var para = document.createElement("a");
           para.appendChild(document.createTextNode("套路" + i));
-          para.setAttribute("href", "{{url_for('getPage')}}" + "?p=" + i)
+          para.setAttribute("href", "{{url_for('getPage_yongchun')}}" + "?p=" + i)
           var breakLine = document.createElement("br")
           element.append(breakLine)
           element.appendChild(para);
         }
-      } else {
-        ;
-      }
+      } else if (ft.textContent === "双截棍") {
+        var element = document.getElementById("div1");
+        for (var i=1;i<=2;i++)
+        { 
+          var para = document.createElement("a");
+          para.appendChild(document.createTextNode("part " + i));
+          para.setAttribute("href", "{{url_for('getPage_sjg')}}" + "?p=" + i)
+          var breakLine = document.createElement("br")
+          element.append(breakLine)
+          element.appendChild(para);
+        }
+      } else {;}
     </script>
     <!--  -->
 </td>
